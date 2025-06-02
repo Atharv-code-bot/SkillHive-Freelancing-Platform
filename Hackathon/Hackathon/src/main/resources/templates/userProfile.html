@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User Profile</title>
+    <link rel="stylesheet" href="/css/userProfile.css">
+	<link rel="icon" href="/path/to/favicon.ico">
+</head>
+<body>
+    <!-- Profile Box -->
+    <div class="profile-box">
+        <!-- Profile Photo -->
+		<i class="fas fa-user-circle profile-icon"></i>
+
+        <h1>User Profile</h1>
+
+        <!-- Original Form -->
+        <form th:action="${isProfilePresent} ? '/profile/update' : '/profile/create'" 
+              th:object="${userProfile}" 
+              method="post">
+            
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" th:field="*{firstName}" /><br/>
+
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" th:field="*{lastName}" /><br/>
+
+            <label for="bio">Bio:</label>
+            <textarea id="bio" th:field="*{bio}"></textarea><br/>
+
+            <!-- Button Container -->
+            <div class="button-container">
+                <!-- Submit Button -->
+                <button type="submit" th:text="${isProfilePresent} ? 'Update Profile' : 'Create Profile'"></button>
+
+                <!-- Back Button -->
+                <button type="button" class="back-button" onclick="goBack()">Back</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Function to navigate back to the previous page or redirect if no history exists
+        function goBack() {
+            if (window.history.length > 1) {
+                window.history.back();
+            } else {
+                window.location.href = '/'; // Redirect to the homepage or any other default page
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,543 @@
+/* Reset some default styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; /* Disable scrolling on the entire page */
+}
+
+/* Layout */
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: white;
+    color: white;
+	max-height: 78px;
+	border-bottom: 2px solid gainsboro;
+}
+
+
+	.logo {
+		max-width: 220px;
+		max-height: 74px;
+	}
+
+.search-bar {
+    padding: 0.5rem;
+    width: 300px;
+	border: 1px solid #aab2d2;
+	border-radius: 30px;
+}
+
+.profile .profile-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+/* Sidebar styling */
+.sidebar {
+	min-width: 20%;
+    width: 250px;
+    padding: 25px;
+	background-color: white;
+	color: white;
+	border-right: 2px solid gainsboro;
+}
+
+.sidebar h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+	color: black;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+	border: 1px solid #E9E9E9;
+}
+
+.sidebar ul li a {
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sidebar-option {
+    padding: 15px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar-option:hover {
+    background-color: gainsboro;
+}
+
+.sidebar-option.selected {
+    background-color: gainsboro; /* Highlighted color for the selected option */
+}
+
+/* Main container */
+.main-container {
+    display: flex;
+    flex: 1;
+	height: 100vh
+}
+
+.projects-section {
+    flex: 1;
+	margin: 20px;
+	padding: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Disable scrolling on .projects-section */
+}
+.hidden {
+    display: none;
+}
+
+/* Project cards styling */
+.project-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	width: 100%; /* Parent fills available space */
+	height: 100vh; /* Example: full viewport height */
+	overflow: auto;
+}
+
+.job-list {
+    flex: 1; /* Fills available space in .projects-section */
+    display: flex;
+	padding-top: 10px;
+    gap: 20px;
+    flex-wrap: wrap;
+	height: 100%;
+}
+
+.project-card {
+    padding: 1rem;
+    width: 250px;
+	height: fit-content;
+	background-color: white;
+	border: 1px solid gainsboro;
+	border-radius: 12px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+	transition: background-color 0.3s ease;
+}
+
+.project-card:hover {
+	background-color: #e0e3ff;
+}
+
+.project-card h4 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.view-btn,
+.edit-btn {
+    padding: 5px 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #fff;
+	margin-top: 5px;
+}
+
+.view-btn {
+    background-color: #007bff; /* Blue for View */
+}
+
+.edit-btn {
+    background-color: #28a745; /* Green for Edit */
+}
+
+.view-btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.edit-btn:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+
+/* Form styling */
+.form-section {
+    display: flex;
+}
+
+
+
+.form-card {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+	width: 59%;
+}
+
+.form-card h3 {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.form-card label {
+    display: block;
+    margin: 0.5rem 0 0.25rem;
+    color: #333;
+}
+
+.form-card input,
+.form-card textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.primary-btn, .secondary-btn, .status-btn {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+}
+
+.primary-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.secondary-btn {
+    background-color: #ddd;
+    color: #333;
+}
+
+.status-btn {
+    margin-top: 0.5rem;
+    background-color: #2196F3;
+    color: white;
+}
+
+.status-btn.completed {
+    background-color: #4CAF50;
+}
+
+.status-btn.cancelled {
+    background-color: #F44336;
+}
+
+.primary-btn:hover {
+    background-color: #45a049;
+}
+
+.secondary-btn:hover {
+    background-color: #ccc;
+}
+
+/* Notification styling */
+.notification {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    background-color: #323232;
+    color: white;
+    padding: 1rem;
+    border-radius: 4px;
+    opacity: 0.9;
+}
+
+
+#project-details-section, #bids-section {
+    padding: 1em;
+    border: 1px solid #ddd;
+    margin-top: 1em;
+    background-color: white;
+    border-radius: 5px;
+	width: 50%;
+	margin-left: 25%;
+}
+
+#project-details-section h3{
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+    justify-content: center;
+}
+
+#bids-heading {
+    font-size: 1.5em;
+}
+
+.bids-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 1em;
+}
+
+.bid-card {
+    padding: 1em;
+    border-radius: 4px;
+	background-color: white;
+	border: 1px solid #ddd;
+	border-radius: 12px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+	transition: background-color 0.3s ease;
+}
+
+.bid-card:hover {
+	background-color: #e0e3ff;
+}
+
+#pending-bids-section {
+	margin: 20px;
+	padding: 20px;
+	max-width: 80%;
+}
+
+#pending-bids-list {
+	overflow: scroll;
+	padding-top: 10px;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+}
+
+.back-button {
+    display: inline-block;
+    margin-top: 1em;
+    padding: 0.5em 1em;
+    font-size: 1em;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.back-button:hover {
+    background-color: #0056b3;
+}
+
+.combined-bid-card {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+}
+
+.freelancer-card {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    text-decoration: none;
+}
+
+.freelancer-info {
+    display: flex;
+    align-items: center;
+}
+
+.freelancer-photo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.bid-details {
+	flex: 1;
+	gap: 5px;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+
+.status-badge.accepted {
+    color: white;
+    background-color: green;
+    padding: 4px 8px;
+    border-radius: 5px;
+	max-width: 150px;
+	width: fit-content;
+}
+
+.status-badge.rejected {
+    color: white;
+    background-color: red;
+    padding: 4px 8px;
+    border-radius: 5px;
+	max-width: 150px;
+	width: fit-content;
+}
+
+.accept-btn, .reject-btn {
+    margin-right: 5px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+	max-width: 150px;
+}
+
+.accept-btn {
+    background-color: #28a745;
+    color: white;
+}
+
+.reject-btn {
+    background-color: #dc3545;
+    color: white;
+}
+
+.back-button {
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.bids-list {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.bid-card .actions {
+	display: flex;
+	gap: 1rem;
+	margin-top: 0.5rem;
+}
+
+.accept-btn {
+	background-color: #4CAF50;
+	color: white;
+	border: none;
+	padding: 0.5rem 1rem;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.reject-btn {
+	background-color: #f44336;
+	color: white;
+	border: none;
+	padding: 0.5rem 1rem;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+
+/* Profile container styling */
+	.profile-container {
+	    position: relative;
+	    display: inline-block;
+	    cursor: pointer;
+	}
+
+	/* Font Awesome Profile Icon Styling */
+	.profile-icon {
+	    font-size: 40px;
+	    color: #007bff;
+	}
+
+	/* Dropdown menu for profile options */
+	.profile-options {
+	    position: absolute;
+	    top: 50px;
+	    right: 0;
+	    background-color: #fff;
+	    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	    border-radius: 4px;
+	    z-index: 1000;
+	    width: 150px;
+	    overflow: hidden;
+	}
+
+	.profile-options.hidden {
+	    display: none;
+	}
+
+	.profile-option {
+	    display: block;
+	    padding: 10px;
+	    color: #333;
+	    text-decoration: none;
+	    font-size: 14px;
+	}
+
+	.profile-option:hover {
+	    background-color: #f0f0f0;
+	}
+
+#update-project-form {
+	width: 100%;
+	height: 100%;
+}
+
+.centered-container {
+	width: 100%;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+}
+
+#create-project-form {
+	display: flex;
+	justify-self: center;
+	align-self: center;
+	width: 80%;
+}
+
+#bids-section {
+	overflow-y:scroll;
+	height: 70vh;
+}
+
+#pb{
+	    display: flex;
+	    flex-direction: column;
+	    width: 100%;
+	    align-items: center;
+}
+
+.btnclass {
+	display: flex;
+	flex-direction: row;
+}
+
+.freelancer-info {
+	gap: 5px;
+}
