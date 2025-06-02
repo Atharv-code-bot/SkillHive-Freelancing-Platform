@@ -19,22 +19,6 @@ SkillHive is a backend-driven freelancing platform designed to connect skilled p
 - **Architecture**: RESTful APIs  
 - **Build Tool**: Maven  
 
-## 🧱 Project Structure
-skillhive/
-├── src/
-│ ├── main/
-│ │ ├── java/
-│ │ │ └── com/skillhive/
-│ │ │ ├── controller/
-│ │ │ ├── model/
-│ │ │ ├── repository/
-│ │ │ ├── service/
-│ │ │ └── SkillHiveApplication.java
-│ │ └── resources/
-│ │ ├── application.yml
-│ │ └── schema.sql
-└── pom.xml
-
 
 ## 🚀 Getting Started
 
@@ -57,10 +41,9 @@ Create a MySQL database named skillhive, then configure application.yml with you
    ./mvnw spring-boot:run
 The app will be available at http://localhost:8080.
 
-🔐 Security
-JWT-based authentication
-
-Role-based authorization using Spring Security
+### 🔐 Security:
+## JWT-based authentication
+## Role-based authorization using Spring Security
 
 📌 Future Enhancements
 Frontend with React or Angular
