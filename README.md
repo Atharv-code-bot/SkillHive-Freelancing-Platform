@@ -26,18 +26,18 @@ SkillHive is a backend-driven freelancing platform designed to connect skilled p
 
 - Java 17+
 - Maven
-- MySQL (with a schema named `skillhive`)
+- MySQL (with a schema named `hackathon`)
 
 ### Installation
 
-1. **Clone the repo**  
-git clone https://github.com/your-username/skillhive.git
-cd skillhive
+1. **Clone the repo**
+   - git clone https://github.com/Atharv-code-bot/SkillHive-Freelancing-Platform.git
+   - cd skillhive
 
-2. **Set up the database**
-Create a MySQL database named skillhive, then configure application.yml with your DB credentials.
+3. **Set up the database**
+   - Create a MySQL database named skillhive, then configure application.yml with your DB credentials.
 
-3. **Run the application**
+5. **Run the application**
    ./mvnw spring-boot:run
 The app will be available at http://localhost:8080.
 
