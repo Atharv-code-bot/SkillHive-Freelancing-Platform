@@ -41,16 +41,13 @@ Create a MySQL database named skillhive, then configure application.yml with you
    ./mvnw spring-boot:run
 The app will be available at http://localhost:8080.
 
-### 🔐 Security:
-## JWT-based authentication
-## Role-based authorization using Spring Security
+### 🔐 Security 
+- JWT-based authentication
+- Role-based authorization using Spring Security
 
-📌 Future Enhancements
-Frontend with React or Angular
-
-Chat system between clients and freelancers
-
-Admin dashboard
+### 📌 Future Enhancements
+ - Frontend with React or Angular
+ - Chat system between clients and freelancers
 
 🤝 Contributing
 Pull requests are welcome. For major changes, open an issue first to discuss your idea.
